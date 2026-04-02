@@ -22,7 +22,10 @@ Theorie kun je vinden op: https://www.edutorial.nl/dbq/introductie/
 
 
 * Geef de namen van de klanten die met kinderen op reis gaan.
-
+# SELECT klanten.naam FROM klanten
+# JOIN boekingen
+# ON klanten.klantnummer = boekingen.klantnummer
+# WHERE 'boekingen.Aantal kinderen' is NOT NULL
 
 * Hoeveel verschillende reizen kun je boeken bij dit reisbureau?
 # SELECT COUNT(*) AS aantal_reizen FROM bestemmingen
@@ -34,6 +37,10 @@ Theorie kun je vinden op: https://www.edutorial.nl/dbq/introductie/
 # SELECT Plaats, COUNT(*) AS aantal_klanten FROM klanten GROUP BY Plaats;
 
 * Geef naam en datum van de klanten die voor de maand April een reis hebbben geboekt.
-
+# SELECT klanten.naam, boekingen.boekdatum
+# FROM klanten
+# JOIN boekingen
+# ON klanten.klantnummer = boekingen.klantnummer
+# WHERE boekingen.boekdatum < '2024-04-01';
 
 * Geef de namen van klanten, het werelddeel van de bestemming en het aantal dagen van de reis voor boekingen van minimaal 15 dagen.
